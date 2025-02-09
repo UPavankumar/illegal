@@ -1,0 +1,82 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/UPavankumar/illegal/blob/main/Die%20Gamble\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import random"
+      ],
+      "metadata": {
+        "id": "YBOSDWWRgpKK"
+      },
+      "execution_count": 1,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "tes,tos=0,0\n",
+        "for i in range(10000):\n",
+        "    sumom,sumed,sumem= 0,0,0\n",
+        "    sumod = 0\n",
+        "    a = []\n",
+        "    for i in range(1000):\n",
+        "      s = random.randint(1,6)\n",
+        "      a.append(s)\n",
+        "      if s%2 != 0 :\n",
+        "        sumom+=s\n",
+        "        sumed+=s\n",
+        "      else:\n",
+        "        sumod+=s\n",
+        "        sumem+=s\n",
+        "    tes+=sumem-sumed\n",
+        "    tos+=sumom-sumod\n",
+        "print(\"Odd Profit: \",tos,\"\\nEven Profit: \",tes)\n",
+        "print(\"Odd Mean: \",tos/100,\"\\nEven Mean: \",tes/100)\n"
+      ],
+      "metadata": {
+        "id": "1yw1iaGkg0ya",
+        "outputId": "34b3b007-9826-46fe-9f0d-7020bfe9ec6c",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": 68,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Odd Profit:  -5002916 \n",
+            "Even Profit:  5002916\n",
+            "Odd Mean:  -50029.16 \n",
+            "Even Mean:  50029.16\n"
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "colab": {
+      "name": "Welcome To Colab",
+      "toc_visible": true,
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "display_name": "Python 3",
+      "name": "python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 0
+}
